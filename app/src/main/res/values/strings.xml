@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Ten Favorite Books 2019</string>
+    <string name="book_name">Nama Buku</string>
+    <string name="detail">Detail</string>
+</resources>
