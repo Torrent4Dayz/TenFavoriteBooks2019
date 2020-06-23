@@ -1,9 +1,11 @@
 package com.dicoding.picodiploma.tenfavoritebooks2019
 
+import android.icu.text.CaseMap
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import androidx.appcompat.app.ActionBar
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -11,10 +13,11 @@ import androidx.recyclerview.widget.RecyclerView
 class MainActivity : AppCompatActivity() {
     private lateinit var rvBook: RecyclerView
     private var list: ArrayList<Book> = arrayListOf()
-
+    private var title: String = "Top 2019 Books I read"
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        setActionBarTitle(title)
 
         rvBook = findViewById(R.id.rv_heroes)
         rvBook.setHasFixedSize(true)
@@ -42,7 +45,16 @@ class MainActivity : AppCompatActivity() {
         setMode(item.itemId)
         return super.onOptionsItemSelected(item)
     }
-
+    private fun showRecyclerCardView() {
+        rvBook.layoutManager = LinearLayoutManager(this)
+        val cardViewHeroAdapter = CardViewBookAdapter(list)
+        rvBook.adapter = cardViewHeroAdapter
+    }
+    private fun setActionBarTitle(title: String){
+        if (supportActionBar != null){
+            (supportActionBar as ActionBar).title = title
+        }
+    }
     private fun setMode(selectedMode: Int){
         when (selectedMode){
             R.id.action_list ->{
@@ -53,8 +65,14 @@ class MainActivity : AppCompatActivity() {
                 showRecyclerGrid()
             }
 
-            R.id.action_cardview ->{}
+            R.id.action_cardview ->{
+                showRecyclerCardView()
+            }
+            R.id.about ->{
+//                TODO(profile)
+            }
         }
+        setActionBarTitle(title)
     }
 
 
