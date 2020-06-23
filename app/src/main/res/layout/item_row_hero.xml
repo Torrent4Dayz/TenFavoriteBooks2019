@@ -35,5 +35,6 @@
             android:ellipsize="end"
             android:maxLines="2"
             tools:text="@string/detail" />
+
     </LinearLayout>
 </RelativeLayout>

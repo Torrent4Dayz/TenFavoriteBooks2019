@@ -2,4 +2,9 @@
     <string name="app_name">Ten Favorite Books 2019</string>
     <string name="book_name">Nama Buku</string>
     <string name="detail">Detail</string>
+    <string name="list">List</string>
+    <string name="grid">Grid</string>
+    <string name="with_cardview">with CardView</string>
+    <string name="share">Share</string>
+    <string name="profile">Profile</string>
 </resources>

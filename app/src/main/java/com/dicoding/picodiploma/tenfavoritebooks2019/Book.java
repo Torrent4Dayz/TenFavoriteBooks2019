@@ -3,17 +3,9 @@ package com.dicoding.picodiploma.tenfavoritebooks2019;
 public class Book {
     private String name;
     private String detail;
-    private String author;
-
-    public String getAuthor() {
-        return author;
-    }
-
-    public void setAuthor(String author) {
-        this.author = author;
-    }
-
     private int photo;
+
+
 
     public String getName() {
         return name;
@@ -30,6 +22,9 @@ public class Book {
     public void setDetail(String detail) {
         this.detail = detail;
     }
+
+
+
 
     public int getPhoto() {
         return photo;
