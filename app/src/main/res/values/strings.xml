@@ -7,5 +7,8 @@
     <string name="with_cardview">with CardView</string>
     <string name="share">Share</string>
     <string name="profile">Profile</string>
+    <string name="profile_pic">Profile pic</string>
     <string name="favorite">favorite</string>
+    <string name="james_malik_aitken">James Malik</string>
+    <string name="email">jamesmalik.aitken@gmail.com</string>
 </resources>

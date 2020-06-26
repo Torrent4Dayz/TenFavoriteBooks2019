@@ -50,10 +50,16 @@ class MainActivity : AppCompatActivity() {
         val cardViewHeroAdapter = CardViewBookAdapter(list)
         rvBook.adapter = cardViewHeroAdapter
     }
+
     private fun setActionBarTitle(title: String){
         if (supportActionBar != null){
             (supportActionBar as ActionBar).title = title
         }
+    }
+    private fun showProfile(){
+        setContentView(R.layout.activity_profile)
+        setActionBarTitle("Profile")
+
     }
     private fun setMode(selectedMode: Int){
         when (selectedMode){
@@ -69,7 +75,7 @@ class MainActivity : AppCompatActivity() {
                 showRecyclerCardView()
             }
             R.id.about ->{
-//                TODO(profile)
+                showProfile()
             }
         }
         setActionBarTitle(title)
