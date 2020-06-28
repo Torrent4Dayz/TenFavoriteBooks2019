@@ -1,14 +1,18 @@
 package com.dicoding.picodiploma.tenfavoritebooks2019
 
+import android.content.Intent
 import android.icu.text.CaseMap
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
+import android.widget.Button
 import androidx.appcompat.app.ActionBar
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import kotlinx.android.synthetic.main.item_row_hero.*
 
 class MainActivity : AppCompatActivity() {
     private lateinit var rvBook: RecyclerView
@@ -24,7 +28,23 @@ class MainActivity : AppCompatActivity() {
 
         list.addAll(BookData.listData)
         showRecyclerList()
+
+        val btnMoveWithDataActivity: Button = findViewById(R.id.img_item_photo)
+        btnMoveWithDataActivity.setOnClickListener(this)
     }
+    override fun onCLick(v: View) {
+        when (v.id){
+            R.id.btn_detail -> {
+                val moveIntent = Intent(this@MainActivity, MoveActivity::class.java)
+                startActivity(moveIntent)
+
+            }
+            R.id.btn_detail -> {
+
+            }
+        }
+    }
+
     private fun showRecyclerList(){
         rvBook.layoutManager = LinearLayoutManager(this)
         val listBookAdapter = ListBookAdapter(list)
