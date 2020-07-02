@@ -29,20 +29,24 @@ class MainActivity : AppCompatActivity() {
         list.addAll(BookData.listData)
         showRecyclerList()
 
-        val btnMoveWithDataActivity: Button = findViewById(R.id.img_item_photo)
-        btnMoveWithDataActivity.setOnClickListener(this)
     }
-    override fun onCLick(v: View) {
-        when (v.id){
-            R.id.btn_detail -> {
-                val moveIntent = Intent(this@MainActivity, MoveActivity::class.java)
-                startActivity(moveIntent)
+//    override fun onCLick(v: View) {
+//        when (v.id){
+//            R.id.btn_detail -> {
+//                val moveIntent = Intent(this, MoveActivity::class.java)
+//                startActivity(moveIntent)
+//
+//            }
+//            R.id.btn_detail -> {
+//                showDetail()
+//            }
+//        }
+//    }
 
-            }
-            R.id.btn_detail -> {
-
-            }
-        }
+    private fun showDetail(){
+        rvBook.layoutManager = LinearLayoutManager(this)
+        val MoveActivity = MoveActivity(list)
+        rvBook.adapter = MoveActivity
     }
 
     private fun showRecyclerList(){
@@ -62,8 +66,10 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        setMode(item.itemId)
-        return super.onOptionsItemSelected(item)
+//        setMode(item.itemId)
+//        return super.onOptionsItemSelected(item)
+        showDetail()
+        return true
     }
     private fun showRecyclerCardView() {
         rvBook.layoutManager = LinearLayoutManager(this)

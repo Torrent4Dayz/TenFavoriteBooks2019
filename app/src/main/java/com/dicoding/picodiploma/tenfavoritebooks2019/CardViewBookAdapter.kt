@@ -27,7 +27,7 @@ class CardViewBookAdapter(private val listBook: ArrayList<Book>) : RecyclerView.
         holder.tvName.text = book.name
         holder.tvDetail.text = book.detail
 
-        holder.btndetail.setOnClickListener { Toast.makeText(holder.itemView.context, "Favorite "+ listBook[holder.adapterPosition].name, Toast.LENGTH_SHORT).show()}
+//        holder.btndetail.setOnClickListener { Toast.makeText(holder.itemView.context, "Favorite "+ listBook[holder.adapterPosition].name, Toast.LENGTH_SHORT).show()}
 
         holder.btnShare.setOnClickListener { Toast.makeText(holder.itemView.context, "Share " + listBook[holder.adapterPosition].name, Toast.LENGTH_SHORT).show() }
 
@@ -41,7 +41,7 @@ class CardViewBookAdapter(private val listBook: ArrayList<Book>) : RecyclerView.
         var imgPhoto: ImageView = itemView.findViewById(R.id.img_item_photo)
         var tvName: TextView = itemView.findViewById(R.id.tv_item_name)
         var tvDetail: TextView = itemView.findViewById(R.id.tv_item_detail)
-        var btndetail: Button = itemView.findViewById(R.id.btn_detail)
+//        var btndetail: Button = itemView.findViewById(R.id.btn_detail)
         var btnShare: Button = itemView.findViewById(R.id.btn_set_share)
     }
 }
